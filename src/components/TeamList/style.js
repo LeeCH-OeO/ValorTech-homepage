@@ -7,8 +7,15 @@ const TeamListContainer = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
   }
+  /* height: 90vh; */
+  width: 100%;
 `;
-
+const TeamTitle = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect to the text */
+`;
 const TeamMemberCard = styled.div`
   border: 1px solid #ccc;
   /* padding: 20px; */
@@ -37,23 +44,19 @@ const TeamMemberName = styled.h2`
   font-size: 1.2rem;
   margin: 0;
 `;
-
+const TeamMemberTitle = styled.h2`
+  font-size: 1rem;
+  margin: 0;
+`;
 const TeamMemberIcon = styled.img`
   width: 350px;
   height: 350px;
 `;
 const TeamMemberEmail = styled.a`
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #0077cc;
   text-decoration: none;
   display: inline-block;
-  padding: 5px;
-
-  &:hover {
-    border-radius: 50%; /* Create a circle with border-radius */
-    transition: background-color 0.3s; /* Add a transition for a smooth hover effect */
-    background-color: gray;
-  }
 `;
 
 export {
@@ -63,4 +66,6 @@ export {
   TeamMemberEmail,
   TeamMemberName,
   TeamMemberInfo,
+  TeamTitle,
+  TeamMemberTitle,
 };

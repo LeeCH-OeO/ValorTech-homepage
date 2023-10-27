@@ -7,14 +7,17 @@ import {
   NavLinks,
   NavLink,
   TeamContainer,
-  TeamImage,
-  TeamText,
   GlobalStyle,
   Footer,
   FooterText,
   FooterIcons,
   FooterIconsContainer,
   NavLogo,
+  TeamImage,
+  TeamSection,
+  MotiText,
+  MotiBackground,
+  SectionText,
 } from "./style";
 function App() {
   const teamRef = useRef(null);
@@ -43,57 +46,72 @@ function App() {
             </NavLink>
           </NavLinks>
         </Navbar>
+        <div>
+          <TeamContainer>
+            {" "}
+            <TeamImage src="/assets/team.png" />
+            <TeamSection>
+              <span style={{ display: "inline-block" }}>
+                <h1>We are ValorTech</h1>
+                <p>Where Valor meets Technology</p>
+              </span>
+            </TeamSection>
+          </TeamContainer>
+        </div>
 
-        <TeamContainer>
-          <TeamImage src="/assets/team.png" />
-          <TeamText>
-            <span style={{ display: "inline-block" }}>
-              <strong>We are ValorTech</strong>
-            </span>
-            <br />
-            <span style={{ display: "inline-block" }}>
-              <small>Where Valor meets Technology</small>
-            </span>
-          </TeamText>
-        </TeamContainer>
-        <h1 ref={teamRef}>Team members</h1>
-        <Section>
+        <Section ref={teamRef}>
           <TeamList />
         </Section>
-        <Section>
-          <p>
-            At ValorTech, we believe that courage is the foundation of progress.
-            It's the audacity to embrace challenges, the tenacity to persevere
-            through adversity, and the unwavering commitment to always strive
-            for excellence. With competence as our guiding star, we embark on a
-            journey to shape the future of technology, all while upholding our
-            core values of innovation, integrity, and resilience.
-          </p>
-          <img src="/assets/logo/Logo.png" style={{ width: "50%" }} />
-        </Section>
-        <h1 ref={motivationRef}>Motivation</h1>
-        <Section>
-          <img src="/assets/motivation_1.png" style={{ width: "50%" }} />
-          <p style={{ padding: "1rem" }}>
-            At ValorTech, we believe that courage is the foundation of progress.
-            It's the audacity to embrace challenges, the tenacity to persevere
-            through adversity, and the unwavering commitment to always strive
-            for excellence. With competence as our guiding star, we embark on a
-            journey to shape the future of technology, all while upholding our
-            core values of innovation, integrity, and resilience.
-          </p>
-        </Section>
-        <Section>
-          <p style={{ padding: "1rem" }}>
-            At ValorTech, we believe that courage is the foundation of progress.
-            It's the audacity to embrace challenges, the tenacity to persevere
-            through adversity, and the unwavering commitment to always strive
-            for excellence. With competence as our guiding star, we embark on a
-            journey to shape the future of technology, all while upholding our
-            core values of innovation, integrity, and resilience.
-          </p>
-          <img src="/assets/motivation_1.png" style={{ width: "50%" }} />
-        </Section>
+        <div style={{ width: "100%" }}>
+          <Section>
+            <SectionText>
+              <p>
+                At ValorTech, we believe that courage is the foundation of
+                progress. It's the audacity to embrace challenges, the tenacity
+                to persevere through adversity, and the unwavering commitment to
+                always strive for excellence. With competence as our guiding
+                star, we embark on a journey to shape the future of technology,
+                all while upholding our core values of innovation, integrity,
+                and resilience.
+              </p>
+            </SectionText>
+            <img src="/assets/logo/Logo.png" style={{ width: "300px" }} />
+          </Section>
+        </div>
+        <MotiBackground>
+          <MotiText>
+            <h1 ref={motivationRef}>Motivation</h1>
+          </MotiText>
+          <Section>
+            <img src="/assets/tu-chemnitz.png" style={{ width: "300px" }} />
+            <SectionText>
+              <p>
+                At ValorTech, we are a group of students from the TU Chemnitz,
+                driven by a common purpose - to explore the intricacies of
+                technology and web development. As part of our winter semester
+                2023/2024 Planspiel Project, we adopted the name ValorTech to
+                symbolize our commitment to courage, competence, and progress.
+                With values rooted in innovation and excellence, we aim to delve
+                into the world of web engineering, push our boundaries, and gain
+                practical insights.
+              </p>
+            </SectionText>
+          </Section>
+          <Section>
+            <SectionText>
+              <p>
+                Under the guidance of our dedicated supervisors from the VSR
+                Professorship, we are excited to embark on this educational
+                path, leveraging their expertise to navigate the complex
+                landscape of web engineering. Our journey is fueled by
+                curiosity, determination, and a desire to learn and grow
+                together.
+              </p>
+            </SectionText>{" "}
+            <img src="public/assets/vsr.png" style={{ width: "300px" }} />
+          </Section>
+        </MotiBackground>
+
         <Footer ref={contactRef}>
           <FooterText>
             <strong>Disclaimer</strong>
