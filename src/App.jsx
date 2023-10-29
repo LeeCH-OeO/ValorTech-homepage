@@ -83,7 +83,7 @@ function App() {
             <h1 ref={motivationRef}>Motivation</h1>
           </MotiText>
           <Section>
-            <img src="/assets/tu-chemnitz.png" style={{ width: "300px" }} />
+            <img src="/assets/tu-chemnitz.svg" style={{ width: "300px" }}  alt={"TU Chemnitz Logo"}/>
             <SectionText>
               <p>
                 At ValorTech, we are a group of students from the TU Chemnitz,

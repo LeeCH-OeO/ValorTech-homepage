@@ -6,6 +6,7 @@ const TeamListContainer = styled.div`
   gap: 20px;
   @media (max-width: 600px) {
     flex-direction: column;
+    align-content: center;
   }
   /* height: 90vh; */
   width: 100%;
@@ -20,7 +21,7 @@ const TeamMemberCard = styled.div`
   border: 1px solid #ccc;
   /* padding: 20px; */
   border-radius: 10px;
-  width: 350px;
+  width: 300px;
   position: relative;
   overflow: hidden;
   opacity: 0; /* Start with 0 opacity to hide the card */
@@ -43,6 +44,7 @@ const TeamMemberInfo = styled.div`
 const TeamMemberName = styled.h2`
   font-size: 1.2rem;
   margin: 0;
+  text-align: center;
 `;
 const TeamMemberTitle = styled.h2`
   font-size: 1rem;

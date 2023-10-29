@@ -28,8 +28,7 @@ const Navbar = styled.nav`
   @media (max-width: 600px) {
     flex-direction: column;
   }
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 1rem;
   background: linear-gradient(#101114, #0b0c11);
 `;
 const MainPart = styled.div``;
@@ -104,7 +103,7 @@ const FooterText = styled.div`
 `;
 const FooterIcons = styled.div`
   padding-right: 2rem;
-  text-align: center;
+  text-align: start;
   @media (max-width: 600px) {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -113,7 +112,8 @@ const FooterIcons = styled.div`
 const FooterIconsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
+  gap: 20px;
 `;
 const TeamContainer = styled.div`
   position: relative;
@@ -135,8 +135,8 @@ const TeamSection = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  margin-top: 6rem;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
