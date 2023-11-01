@@ -63,11 +63,11 @@ const TeamList = () => {
   }, [showCard, teamMembers.length]);
 
   return (
-    <div>
+    <div style={{width: "100%", display: "flex", flexDirection: "column"}}>
       <TeamTitle>
         <h1>OurTeam</h1>
       </TeamTitle>
-      <TeamListContainer>
+      <TeamListContainer style={{width: "100%"}}>
         {teamMembers.map((member, index) => (
           <TeamMemberCard className={showCard > index ? "show-card" : ""}>
             <TeamMemberIcon src={member.icon} alt={`${member.name}'s icon`} />

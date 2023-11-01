@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from "styled-components";
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: #fff;
   min-height: 100vh;
@@ -11,6 +10,44 @@ const MainContainer = styled.div`
   background-color: black;
   overflow-x: hidden;
 `;
+
+const ContainerWithBackground = styled.div`\
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background: url("/assets/team.png");
+  background-clip: content-box;
+  background-position: bottom;
+  @media screen and (max-width: 1600px) {
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  @media screen and (max-width: 600px) {
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+`;
+
+const ValorTechText = styled.h1`
+  margin: 0
+`
+
+const SloganText = styled.p`
+  margin: 24px 0 0 0;
+`
+
+const DisclaimerText = styled.p`
+  max-width: 600px;
+  @media (max-width: 600px) {
+    margin-top: 24px;
+  }
+  @media screen and (max-width: 1600px) {
+    text-align: left;
+    max-width: 400px;
+  }
+`
+
 const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
@@ -29,7 +66,6 @@ const Navbar = styled.nav`
     flex-direction: column;
   }
   padding-top: 1rem;
-  background: linear-gradient(#101114, #0b0c11);
 `;
 const MainPart = styled.div``;
 const NavLinks = styled.ul`
@@ -54,8 +90,8 @@ const NavLink = styled.li`
 `;
 const NavLogo = styled.img`
   padding-left: 5rem;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   @media (max-width: 600px) {
     padding-left: 0;
   }
@@ -85,8 +121,8 @@ const Footer = styled.div`
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: grey;
+  align-items: flex-start;
+  background: #09090d;
   @media (max-width: 600px) {
     flex-direction: column-reverse;
   }
@@ -98,7 +134,7 @@ const FooterText = styled.div`
   @media (max-width: 600px) {
     padding-right: 1rem;
     padding-left: 1rem;
-    text-align: center;
+    text-align: left;
   }
 `;
 const FooterIcons = styled.div`
@@ -127,24 +163,39 @@ const TeamImage = styled.img`
   width: 100%;
   height: auto;
 `;
-
+const TeamDescrSection = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10rem;
+    @media (max-width: 600px) {
+      margin-top: 2rem;
+      flex-direction: column;
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      margin-top: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+`
 const TeamSection = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
-  margin-top: 6rem;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   color: white;
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect to the text */
+  padding: 6rem;
   @media (max-width: 600px) {
     font-size: 1.2rem;
+    padding: 2rem;
+    height: 100%;
   }
 `;
 const TeamSectionButtom = styled.div`
@@ -159,7 +210,7 @@ const MotiText = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect to the text */
 `;
 const MotiBackground = styled.div`
-  background: linear-gradient(#000, #103c6c);
+  background: linear-gradient(180deg, #102043 0%, #0C0D12 100%);
   width: 100%;
 `;
 export {
@@ -182,4 +233,9 @@ export {
   MotiText,
   MotiBackground,
   SectionText,
+  ContainerWithBackground,
+  TeamDescrSection,
+  ValorTechText,
+  DisclaimerText,
+  SloganText
 };

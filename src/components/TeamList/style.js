@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 const TeamListContainer = styled.div`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
   @media (max-width: 600px) {
     flex-direction: column;
     align-content: center;
+    gap: 20px;
   }
   /* height: 90vh; */
   width: 100%;
@@ -18,7 +20,6 @@ const TeamTitle = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect to the text */
 `;
 const TeamMemberCard = styled.div`
-  border: 1px solid #ccc;
   /* padding: 20px; */
   border-radius: 10px;
   width: 300px;
@@ -38,13 +39,14 @@ const TeamMemberInfo = styled.div`
   padding: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 20px;
 `;
 const TeamMemberName = styled.h2`
   font-size: 1.2rem;
   margin: 0;
-  text-align: center;
+  text-align: left;
 `;
 const TeamMemberTitle = styled.h2`
   font-size: 1rem;
