@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import 'animate.css';
 import TeamList from "./components/TeamList/teamList";
 import {
   MainContainer,
@@ -13,12 +14,12 @@ import {
   FooterIcons,
   FooterIconsContainer,
   NavLogo,
-  TeamImage,
   TeamSection,
   MotiText,
   MotiBackground,
-  SectionText,
+  SectionText, ContainerWithBackground, TeamDescrSection, ValorTechText, DisclaimerText, SloganText,
 } from "./style";
+import CookiePopup from "./components/CookiePopup/cookiePopup.jsx";
 function App() {
   const teamRef = useRef(null);
   const motivationRef = useRef(null);
@@ -32,37 +33,62 @@ function App() {
 
   return (
     <>
+      <CookiePopup />
       <GlobalStyle />
       <MainContainer>
-        <Navbar>
-          <NavLogo src="/assets/logo/Logo.svg" />
-          <NavLinks>
-            <NavLink onClick={() => scrollToSection(teamRef)}>Team</NavLink>
-            <NavLink onClick={() => scrollToSection(motivationRef)}>
-              Motivation
-            </NavLink>
-            <NavLink onClick={() => scrollToSection(contactRef)}>
-              Contact
-            </NavLink>
-          </NavLinks>
-        </Navbar>
-        <div>
-          <TeamContainer>
-            {" "}
-            <TeamImage src="/assets/team.png" />
-            <TeamSection>
-              <span style={{ display: "inline-block" }}>
-                <h1>We are ValorTech</h1>
-                <p>Where Valor meets Technology</p>
-              </span>
-            </TeamSection>
-          </TeamContainer>
-        </div>
+        <ContainerWithBackground>
+          <Navbar>
+            <NavLogo src="/assets/logo/Logo.svg" />
+            <NavLinks>
+              <NavLink onClick={() => scrollToSection(teamRef)}>Team</NavLink>
+              <NavLink onClick={() => scrollToSection(motivationRef)}>
+                Motivation
+              </NavLink>
+              <NavLink onClick={() => scrollToSection(contactRef)}>
+                Contact
+              </NavLink>
+            </NavLinks>
+          </Navbar>
+          <div>
+            <TeamContainer>
+              <TeamSection>
+                <TeamDescrSection>
+                  <span
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: 'flex-start'
+                  }}
+                  >
+                    <ValorTechText>We are ValorTech</ValorTechText>
+                    <SloganText>Where Valor meets Technology</SloganText>
+                  </span>
+                  <span style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center"
+                  }}>
+                    <DisclaimerText>
+                      Disclaimer: We’re the university study group at
+                      TU Chemnitz and don’t provide any services.
+                    </DisclaimerText>
+                  </span>
+                </TeamDescrSection>
+                <img
+                    onClick={() => scrollToSection(teamRef)}
+                    src={"/assets/arrow-down.svg"}
+                    className="animate__animated animate__fadeOut animate__infinite animate__slow"
+                    style={{cursor: "pointer", justifySelf: "flex-end"}}
+                />
+              </TeamSection>
+            </TeamContainer>
+          </div>
 
-        <Section ref={teamRef}>
-          <TeamList />
-        </Section>
-        <div style={{ width: "100%" }}>
+          <Section ref={teamRef}>
+            <TeamList />
+          </Section>
+        </ContainerWithBackground>
+        <div style={{ width: "100%", background: "linear-gradient(180deg, #010104 0%, #0F1F43 100%)" }}>
           <Section>
             <SectionText>
               <p>
@@ -108,7 +134,7 @@ function App() {
                 together.
               </p>
             </SectionText>{" "}
-            <img src="public/assets/vsr.png" style={{ width: "300px" }} />
+            <img src="/assets/vsr.png" style={{ width: "300px" }} />
           </Section>
         </MotiBackground>
 
@@ -141,13 +167,13 @@ function App() {
             <FooterIconsContainer>
               <a href="https://www.facebook.com/profile.php?id=61552913003419">
                 <img
-                  src="/assets/logo/Facebook_Logo_Secondary.png"
+                  src="/assets/logo/facebook.svg"
                   style={{ width: "32px", height: "32px" }}
                 />
               </a>
               <a href="https://twitter.com/valor_tech">
                 <img
-                  src="/assets/logo/logo-white.png"
+                  src="/assets/logo/twitterx.svg"
                   style={{ width: "32px", height: "32px" }}
                 />
               </a>
