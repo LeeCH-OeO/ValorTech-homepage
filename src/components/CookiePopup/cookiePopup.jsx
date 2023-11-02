@@ -1,34 +1,47 @@
-import React, {useRef, useState} from 'react';
-import Popup from 'reactjs-popup';
-import {Button} from "../Button/button.jsx";
-import './module.styles.css';
+import React, { useState } from "react";
+import {
+  DialogOverlay,
+  DialogContainer,
+  CookieButton,
+  ButtonContainer,
+} from "./style";
+
 const CookiePopup = () => {
-    const [open, setOpen] = useState(true);
-    const closeModal = () => {
-        setOpen(false);
-    };
-    return (
-        <Popup contentStyle={{position: "absolute", left: 0, bottom: 0}} overlayStyle={{position: "absolute", left: 0, bottom: 0}}  open={open} modal nested position="bottom left" onClose={closeModal}>
-            {close => (
-                <div
-                    className={"animate__animated animate__fadeIn popup-container"}
+  const [isVisible, setIsVisible] = useState(
+    !localStorage.getItem("cookieAccepted")
+  );
 
-                >
-                    <h1>Privacy Settings</h1>
-                    <p>
-                        We use cookie to enhance your browsing experience,
-                        serve personalized ads or content, and analyze out traffic.
-                        By clicking “Accept All”, you consent to use of cookies.
-                    </p>
-                    <div style={{display: "flex", flexDirection: "row", gap: "20px"}}>
-                        <Button onClick={closeModal} label="Customize"/>
-                        <Button onClick={closeModal} label="Reject All"/>
-                        <Button onClick={closeModal} label="Accept All"/>
-                    </div>
-                </div>
-            )}
-        </Popup>
-    );
+  const handleAcceptClick = () => {
+    setIsVisible(false);
+    localStorage.setItem("cookieAccepted", "true");
+  };
+  const handleReject = () => {
+    setIsVisible(false);
+    localStorage.setItem("cookieAccepted", "false");
+  };
+
+  return (
+    <>
+      {isVisible && (
+        <DialogOverlay>
+          <DialogContainer open={isVisible} onClose={() => setIsVisible(false)}>
+            <h1>Privacy Settings</h1>
+            <p>
+              We use cookie to enhance your browsing experience, serve
+              personalized ads or content, and analyze out traffic. By clicking
+              “Accept All”, you consent to use of cookies.
+            </p>
+            <ButtonContainer>
+              <CookieButton onClick={handleReject}>Reject All</CookieButton>
+              <CookieButton onClick={handleAcceptClick}>Customize</CookieButton>
+              <CookieButton onClick={handleAcceptClick}>
+                Accept All
+              </CookieButton>
+            </ButtonContainer>
+          </DialogContainer>
+        </DialogOverlay>
+      )}
+    </>
+  );
 };
-
-export default CookiePopup
+export { CookiePopup };

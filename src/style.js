@@ -11,7 +11,7 @@ const MainContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const ContainerWithBackground = styled.div`\
+const ContainerWithBackground = styled.div`
   display: flex;
   width: 100vw;
   flex-direction: column;
@@ -26,16 +26,15 @@ const ContainerWithBackground = styled.div`\
     background-position: top;
     background-repeat: no-repeat;
   }
-
 `;
 
 const ValorTechText = styled.h1`
-  margin: 0
-`
+  margin: 0;
+`;
 
 const SloganText = styled.p`
   margin: 24px 0 0 0;
-`
+`;
 
 const DisclaimerText = styled.p`
   max-width: 600px;
@@ -46,7 +45,7 @@ const DisclaimerText = styled.p`
     text-align: left;
     max-width: 400px;
   }
-`
+`;
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -164,22 +163,22 @@ const TeamImage = styled.img`
   height: auto;
 `;
 const TeamDescrSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 10rem;
-    @media (max-width: 600px) {
-      margin-top: 2rem;
-      flex-direction: column;
-    }
-    @media screen and (max-width: 900px) {
-      flex-direction: column;
-      margin-top: 2rem;
-      justify-content: center;
-      align-items: center;
-    }
-`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10rem;
+  @media (max-width: 600px) {
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 const TeamSection = styled.div`
   height: 70%;
   display: flex;
@@ -210,7 +209,7 @@ const MotiText = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect to the text */
 `;
 const MotiBackground = styled.div`
-  background: linear-gradient(180deg, #102043 0%, #0C0D12 100%);
+  background: linear-gradient(180deg, #102043 0%, #0c0d12 100%);
   width: 100%;
 `;
 export {
@@ -237,5 +236,5 @@ export {
   TeamDescrSection,
   ValorTechText,
   DisclaimerText,
-  SloganText
+  SloganText,
 };

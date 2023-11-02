@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import 'animate.css';
+import "animate.css";
 import TeamList from "./components/TeamList/teamList";
 import {
   MainContainer,
@@ -17,9 +17,14 @@ import {
   TeamSection,
   MotiText,
   MotiBackground,
-  SectionText, ContainerWithBackground, TeamDescrSection, ValorTechText, DisclaimerText, SloganText,
+  SectionText,
+  ContainerWithBackground,
+  TeamDescrSection,
+  ValorTechText,
+  DisclaimerText,
+  SloganText,
 } from "./style";
-import CookiePopup from "./components/CookiePopup/cookiePopup.jsx";
+import { CookiePopup } from "./components/CookiePopup/cookiePopup.jsx";
 function App() {
   const teamRef = useRef(null);
   const motivationRef = useRef(null);
@@ -54,31 +59,33 @@ function App() {
               <TeamSection>
                 <TeamDescrSection>
                   <span
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: 'flex-start'
-                  }}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
                   >
                     <ValorTechText>We are ValorTech</ValorTechText>
                     <SloganText>Where Valor meets Technology</SloganText>
                   </span>
-                  <span style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center"
-                  }}>
+                  <span
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
                     <DisclaimerText>
-                      Disclaimer: We’re the university study group at
-                      TU Chemnitz and don’t provide any services.
+                      Disclaimer: We’re the university study group at TU
+                      Chemnitz and don’t provide any services.
                     </DisclaimerText>
                   </span>
                 </TeamDescrSection>
                 <img
-                    onClick={() => scrollToSection(teamRef)}
-                    src={"/assets/arrow-down.svg"}
-                    className="animate__animated animate__fadeOut animate__infinite animate__slow"
-                    style={{cursor: "pointer", justifySelf: "flex-end"}}
+                  onClick={() => scrollToSection(teamRef)}
+                  src={"/assets/arrow-down.svg"}
+                  className="animate__animated animate__fadeOut animate__infinite animate__slow"
+                  style={{ cursor: "pointer", justifySelf: "flex-end" }}
                 />
               </TeamSection>
             </TeamContainer>
@@ -88,7 +95,12 @@ function App() {
             <TeamList />
           </Section>
         </ContainerWithBackground>
-        <div style={{ width: "100%", background: "linear-gradient(180deg, #010104 0%, #0F1F43 100%)" }}>
+        <div
+          style={{
+            width: "100%",
+            background: "linear-gradient(180deg, #010104 0%, #0F1F43 100%)",
+          }}
+        >
           <Section>
             <SectionText>
               <p>
@@ -109,7 +121,11 @@ function App() {
             <h1 ref={motivationRef}>Motivation</h1>
           </MotiText>
           <Section>
-            <img src="/assets/tu-chemnitz.svg" style={{ width: "300px" }}  alt={"TU Chemnitz Logo"}/>
+            <img
+              src="/assets/tu-chemnitz.svg"
+              style={{ width: "300px" }}
+              alt={"TU Chemnitz Logo"}
+            />
             <SectionText>
               <p>
                 At ValorTech, we are a group of students from the TU Chemnitz,
