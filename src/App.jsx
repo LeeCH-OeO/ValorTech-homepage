@@ -46,6 +46,7 @@ function App() {
             <NavLogo src="/assets/logo/Logo.svg" />
             <NavLinks>
               <NavLink onClick={() => scrollToSection(teamRef)}>Team</NavLink>
+              <NavLink onClick={() => scrollToSection(teamRef)}>Blog</NavLink>
               <NavLink onClick={() => scrollToSection(motivationRef)}>
                 Motivation
               </NavLink>

@@ -9,7 +9,7 @@ const fadeIn = keyframes`
 `;
 const DialogOverlay = styled.div`
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -28,7 +28,6 @@ const DialogContainer = styled.dialog`
   max-width: 484px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   @media (max-width: 600px) {
     max-width: 300px;
