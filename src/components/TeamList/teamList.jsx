@@ -65,7 +65,7 @@ const TeamList = () => {
   return (
     <div style={{width: "100%", display: "flex", flexDirection: "column"}}>
       <TeamTitle>
-        <h1>OurTeam</h1>
+        <h1 style={{fontSize: '3rem'}}>Our Team</h1>
       </TeamTitle>
       <TeamListContainer style={{width: "100%"}}>
         {teamMembers.map((member, index) => (
