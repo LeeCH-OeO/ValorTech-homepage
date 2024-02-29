@@ -33,7 +33,6 @@ const CookiePopup = () => {
             </p>
             <ButtonContainer>
               <CookieButton onClick={handleReject}>Reject All</CookieButton>
-              <CookieButton onClick={handleAcceptClick}>Customize</CookieButton>
               <CookieButton onClick={handleAcceptClick}>
                 Accept All
               </CookieButton>
